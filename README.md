@@ -5,13 +5,16 @@ follow.me
 ============
 
 * Gem list is generally up to you but provide details on what you choose and why you chose it.
+	Most of what I chose was predefined or chosen out of familiarity.
 * Create a task list for this project in the task manager of your choice and share with myself and Tobias.
 * Create models that allow a user to follow another user.
 * Once designed send an email with relevant screenshots to nate@conjectur.com for approval. 
 * The user model’s only attribute is “name”. You may scaffold *only* the create action and project folder.
 * Create an interface that accepts post requests that allows users to “follow” other users.
 * You may use SASS or LESS but pick one and explain why.
+	I went with sass because for the minimal amount of styling we'll be doing, it made no sense to use LESS
 * You may use HAML or ERB but pick one and explain why.
+    I went with HAML to recreate some of the challeges of changing to a new syntax, as well as a personal interest in exploring it.
 * Should be databased backed; use whatever database you are most comfortable with. 
 * Must run in the cloud and on your local environment, use heroku/ec2 whatever you prefer.
 * Create a git repo for this project and share it with me on github.com, my user name is Aeramor

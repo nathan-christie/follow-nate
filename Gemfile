@@ -47,3 +47,9 @@ gem 'unicorn'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+# required by Heroku
+gem 'rails_12factor', group: :production
+
+#ruby version requested by heroku setup guide
+ruby "2.1.1"

@@ -48,7 +48,7 @@ test:
   encoding: unicode
   database: follow-nate_test
   pool: 5
-  username: follow-nate
+#  username: follow-nate
   password:
 
 production:
