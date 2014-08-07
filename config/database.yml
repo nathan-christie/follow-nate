@@ -19,6 +19,7 @@ development:
   encoding: unicode
   database: follow-nate_development
   pool: 5
+  host: localhost
   username: follow-nate
   password:
 

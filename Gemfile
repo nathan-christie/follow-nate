@@ -1,4 +1,7 @@
+require 'rubygems'
+
 source 'https://rubygems.org'
+source 'http://gems.github.com'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.2'
@@ -17,7 +20,6 @@ gem 'uglifier', '>= 1.3.0'
 
 # Use CoffeeScript for .js.coffee assets and views
 # gem 'coffee-rails', '~> 4.0.0'
-gem 'jquery', '~> 0.0.1' # no coffee, i don't know how to use it and jquery is only used to support the async reqs
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
@@ -50,6 +52,9 @@ gem 'unicorn'
 
 # required by Heroku
 gem 'rails_12factor', group: :production
+
+# rake routes told me this was prereq
+gem 'rake', '~> 10.3.2'
 
 #ruby version requested by heroku setup guide
 ruby "2.1.1"
