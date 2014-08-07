@@ -20,7 +20,7 @@ development:
   database: follow-nate_development
   pool: 5
   host: localhost
-  username: follow-nate
+# username: follow-nate
   password:
 
   # Connect on a TCP socket. Omitted by default since the client uses a
@@ -57,5 +57,5 @@ production:
   encoding: unicode
   database: follow-nate_production
   pool: 5
-  username: follow-nate
+# username: follow-nate
   password:
