@@ -1,28 +1,43 @@
 %h1=@user.name
 
--@full_follow.each do |user|
-	%li
-		=link_to user.name, user_path(user)
-		%button{:onclick => "toggle_follow_user("+@user.id.to_s+","+user.id.to_s+")"} unfollow
-		%span followed by
+%table{:class=>"large-12 columns"}
+	%thead
+		%tr
+			%th{:style=>""} User Name
+			%th{:style=>"width: 12rem;"}
+			%th{:style=>"width: 12rem;"}
+	%tbody
+		-@full_follow.each do |user|
+			%tr
+				%td=link_to user.name, user_path(user)
+				%td is following
+				%td
+					%button{:class => "", :onclick => "toggle_follow_user("+@user.id.to_s+","+user.id.to_s+")"}
+						unfollow
 
--@following.each do |user|
-	%li
-		=link_to user.name, user_path(user)
-		%button{:onclick => "toggle_follow_user("+@user.id.to_s+","+user.id.to_s+")"} unfollow
+		-@following.each do |user|
+			%tr
+				%td=link_to user.name, user_path(user)
+				%td
+				%td
+					%button{:class => "", :onclick => "toggle_follow_user("+@user.id.to_s+","+user.id.to_s+")"}
+						unfollow
 
--@followed_by.each do |user|
-	%li
-		=link_to user.name, user_path(user)
-		%button{:onclick => "toggle_follow_user("+@user.id.to_s+","+user.id.to_s+")"} follow
-		%span followed by
+		-@followed_by.each do |user|
+			%tr
+				%td=link_to user.name, user_path(user)
+				%td is following
+				%td
+					%button{:class => "", :onclick => "toggle_follow_user("+@user.id.to_s+","+user.id.to_s+")"}
+						follow
 
--@non_follow.each do |user|
-	%li
-		=link_to user.name, user_path(user)
-		%button{:onclick => "toggle_follow_user("+@user.id.to_s+","+user.id.to_s+")"} follow
-
-=debug(@all_users)
+		-@non_follow.each do |user|
+			%tr
+				%td=link_to user.name, user_path(user)
+				%td
+				%td
+					%button{:class => "", :onclick => "toggle_follow_user("+@user.id.to_s+","+user.id.to_s+")"}
+						follow
 
 :javascript
 	var toggle_follow_user_path = "#{toggle_follow_user_path}";

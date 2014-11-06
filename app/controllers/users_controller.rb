@@ -19,7 +19,8 @@ class UsersController < ApplicationController
 	end
 
 	def get_user_relationships
-		relationships = Relationship.all
+	#	relationships = Relationship.where(:owner_id => owner || :target_id => target)
+		relationships = Relationship.where("owner_id = ? OR target_id = ?", @user.id, @user.id)
 		@all_users = User.all
 		@all_users -= [@user]
 
@@ -57,7 +58,6 @@ class UsersController < ApplicationController
 			error_messages = []
 			( owner_id == target_id ) && error_messages << "User cannot follow self"
 			( owner.blank? || target.blank? ) && error_messages << "User does not exist"
-			( owner_id == target_id ) && error_messages << "User cannot follow self"
 			if error_messages.length > 0
 				error_messages = error_messages.joint(', ')
 				render :json => {error_messages: error_messages}

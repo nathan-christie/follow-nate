@@ -1,0 +1,20 @@
+<%# this is a super dumb way to do this but it "works" for demonstration purposes %>
+
+<% breadcrumbs = request.url.split("/") %>
+<ul class="breadcrumbs">
+	<% unless root_url == request.url %>
+		<li><a href="<%= root_url %>">Home</a></li>
+	<% else %>
+		<li class="current"><a href="">Home</a></li>
+	<% end %>
+	<% for i in 3..(breadcrumbs.length - 2) %>
+		<li>
+			<a href="<%= root_url + (breadcrumbs[3..i].join('/'))%>">
+				<%= breadcrumbs[i].titleize %>
+			</a>
+		</li>
+	<% end %>
+	<% unless root_url == request.url %>
+		<li class="current"><a href="#"><%= breadcrumbs[-1].titleize %></a></li>
+	<% end %>
+</ul>
