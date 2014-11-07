@@ -188,8 +188,10 @@ $side-nav-link-height: 4rem;
 	padding: 0;
 	li {
 		display: block;
+		position: relative;
 		margin: 0;
 		padding: 0;
+		border-bottom: 1px solid #456;
 		a {
 			display: block;
 			padding: 0 $full-margin !important;
@@ -198,22 +200,23 @@ $side-nav-link-height: 4rem;
 			&:hover, &:focus{
 				background: hsla(0, 100%, 100%, 0.125) !important;
 			}
-		}
-
-		&.active, & {
-			&:after {
-				content: "";
-				display: block;
-				position: absolute;
-				right: -$side-nav-link-height * 0.5;
-				top: 0;
-				height: $side-nav-link-height;
-				width:  $side-nav-link-height;
-				background: white;
-				border-radius: 0 0 0 2px;
-				transform: rotate(45deg);
-				transform: matrix(0.50, 0.50, -0.50, 0.50, 0, 0); /* diamond of same height */
-				transform: matrix(0.55, 0.55, -0.55, 0.55, 0, 0); /* diamond of slgihtly greater height */
+			&.active {
+				background: #456 !important;
+				color: white !important;
+				&:after {
+					content: "";
+					display: block;
+					position: absolute;
+					right: -$side-nav-link-height * 0.5;
+					top: 0;
+					height: $side-nav-link-height;
+					width:  $side-nav-link-height;
+					background: white;
+					border-radius: 0 0 0 2px;
+					transform: rotate(45deg);
+					transform: matrix(0.50, 0.50, -0.50, 0.50, 0, 0); /* diamond of same height */
+					transform: matrix(0.55, 0.55, -0.55, 0.55, 0, 0); /* diamond of slgihtly greater height */
+				}
 			}
 		}
 	}
@@ -246,5 +249,47 @@ $side-nav-link-height: 4rem;
 			padding: 0;
 			line-height: $min-height;
 		}
+	}
+}
+
+.printout {
+	font-family: monospace;
+	background: #EEE;
+	border: 1px solid #CCC;
+	max-height: 40vh;
+	overflow-y: scroll;
+}
+
+.sheet-data {
+	padding: 0 !important;
+	&, & * {
+		vertical-align: top;
+	}
+	& > .sheet-data-row {
+		padding: 0.25rem;
+		&:nth-of-type(2n){
+			background: rgba(255,255,255,0.5);
+		}
+	}
+}
+
+.sheet-data-key {
+	display: inline-block;
+	width: 12rem;
+	text-align: right;
+	opacity: 0.8;
+	&:after{
+		content: ": ";
+		white-space: pre;
+	}
+}
+.sheet-data-value {
+	display: inline-block;
+}
+.sheet-data-subsheet {
+	display: block;
+	margin-left: 2rem;
+	.sheet-data-key {
+		opacity: 0.4;
 	}
 }
