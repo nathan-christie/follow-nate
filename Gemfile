@@ -57,3 +57,6 @@ gem 'rake', '~> 10.3.2'
 
 #ruby version requested by heroku setup guide
 ruby "2.1.1"
+
+#gretel for breadcrumbs
+gem 'gretel'

@@ -1,7 +1,7 @@
 <%# this is a super dumb way to do this but it "works" for demonstration purposes %>
 
-<% breadcrumbs = request.url.split("/") %>
-<ul class="breadcrumbs">
+<%# breadcrumbs = request.url.split("/") %>
+<ul hidden class="breadcrumbs">
 	<% unless root_url == request.url %>
 		<li><a href="<%= root_url %>">Home</a></li>
 	<% else %>
@@ -18,3 +18,5 @@
 		<li class="current"><a href="#"><%= breadcrumbs[-1].titleize %></a></li>
 	<% end %>
 </ul>
+
+<%= breadcrumbs style: :foundation5 %>

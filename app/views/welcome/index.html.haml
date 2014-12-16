@@ -1,5 +1,5 @@
+- breadcrumb :root
 %h1 Welcome to Follow-Nate!
-
 %section{:class=>"row"}
 	%table{:class=>"large-12 columns"}
 		%thead
@@ -12,29 +12,9 @@
 					%td= link_to user.name, user_path(user)
 					%td{:class=>""}
 						= link_to content_tag(:button, "show"), user_path(user)
-
 	%p
 		%button{:class=>""} New User
-
 %hr
-
 %p
 	%button{:onclick=>"getRandomUser()"} Generate Random User
-
-%section{:class=>"row"}
-	%form{:class=>"large-6 columns"}
-		%h1 Sample Form
-		%div{:class=>"row"}
-			%div{:class=>"medium-12 columns"}
-				= label_tag(:felix)
-				= text_field_tag(:felix)
-		%div{:class=>"row"}
-			%div{:class=>"medium-6 columns"}
-				= label_tag(:first)
-				= text_field_tag(:first)
-			%div{:class=>"medium-6 columns"}
-				= label_tag(:url)
-				= url_field_tag(:url)
-		%div{:class=>"row"}
-			%div{:class=>"medium-12 columns"}
-				= submit_tag "submit", {:class=>"button"}
+%hr

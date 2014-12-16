@@ -2,6 +2,8 @@
 <html>
 <head>
 	<title>FollowNate</title>
+	<meta name="format-detection" content="telephone=no">
+	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 	<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/foundation/5.4.7/css/foundation.css">
 	<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/foundation/5.4.7/css/normalize.min.css">
 	<link type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/foundation/5.4.7/js/foundation.min.js">
@@ -14,9 +16,7 @@
 <%= render partial: "layouts/application_top_nav" %>
 <div class="page-content">
 	<%= render partial: "layouts/breadcrumbs" %>
-	<section>
-		<%= yield %>
-	</section>
+	<%= yield %>
 </div>
 <%= render partial: "layouts/application_side_nav" %>
 
